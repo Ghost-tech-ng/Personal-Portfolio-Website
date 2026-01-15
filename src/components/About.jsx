@@ -23,7 +23,7 @@ const About = () => {
                     className="flex justify-center mb-16"
                 >
                     <div className="relative group">
-                        <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[var(--accent)] p-1 bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
+                        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-[var(--accent)] p-1 bg-gradient-to-br from-cyan-500/20 to-blue-500/20">
                             <div className="w-full h-full rounded-full bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center">
                                 {/* Placeholder - User can replace profile.jpg in public folder */}
                                 <img
