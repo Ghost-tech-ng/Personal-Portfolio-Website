@@ -34,6 +34,17 @@ const Contact = () => {
                             <Github size={32} className="group-hover:scale-110 transition-transform" />
                         </a>
 
+                        <a
+                            href="/Osemwegie_Eghosa_CV.pdf"
+                            download
+                            className="group flex items-center justify-between p-8 bg-[var(--accent)] hover:bg-white text-black transition-all duration-300"
+                        >
+                            <span className="text-2xl font-bold">Download CV</span>
+                            <svg className="w-8 h-8 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                            </svg>
+                        </a>
+
                         <div className="p-8 border border-white/10 text-gray-500">
                             <h3 className="uppercase tracking-widest text-sm mb-2">Location</h3>
                             <p className="text-white text-xl">Abuja, Nigeria (Remote)</p>
