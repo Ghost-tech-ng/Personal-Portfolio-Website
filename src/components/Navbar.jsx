@@ -26,12 +26,36 @@ const Navbar = () => {
             <div className="container mx-auto px-6 flex justify-between items-center">
                 <motion.a
                     href="#home"
-                    className="text-2xl font-bold tracking-tighter text-white"
+                    className="flex items-center gap-3 group"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    EGHOSA<span className="text-[var(--accent)]">.</span>TECH
+                    {/* Monogram mark */}
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
+                        {/* Outer square border */}
+                        <rect x="1" y="1" width="34" height="34" stroke="rgba(255,255,255,0.15)" strokeWidth="1"/>
+                        {/* Cyan accent corner — top-left */}
+                        <path d="M1 10 L1 1 L10 1" stroke="#00f2ff" strokeWidth="1.5"/>
+                        {/* Cyan accent corner — bottom-right */}
+                        <path d="M35 26 L35 35 L26 35" stroke="#00f2ff" strokeWidth="1.5"/>
+                        {/* "E" left bar */}
+                        <line x1="10" y1="10" x2="10" y2="26" stroke="white" strokeWidth="1.5"/>
+                        {/* "E" top bar */}
+                        <line x1="10" y1="10" x2="18" y2="10" stroke="white" strokeWidth="1.5"/>
+                        {/* "E" mid bar */}
+                        <line x1="10" y1="18" x2="16" y2="18" stroke="#00f2ff" strokeWidth="1.5"/>
+                        {/* "E" bottom bar */}
+                        <line x1="10" y1="26" x2="18" y2="26" stroke="white" strokeWidth="1.5"/>
+                        {/* "O" right side — open circle arc as two lines */}
+                        <path d="M21 10 Q26 10 26 18 Q26 26 21 26" stroke="white" strokeWidth="1.5" fill="none"/>
+                        <line x1="21" y1="10" x2="21" y2="26" stroke="white" strokeWidth="1.5"/>
+                    </svg>
+                    {/* Wordmark */}
+                    <div className="flex flex-col leading-none">
+                        <span className="text-sm font-bold tracking-[0.15em] text-white uppercase">Eghosa</span>
+                        <span className="text-[10px] font-mono tracking-[0.3em] text-[var(--accent)] uppercase">Osemwegie</span>
+                    </div>
                 </motion.a>
 
                 {/* Desktop Menu */}
