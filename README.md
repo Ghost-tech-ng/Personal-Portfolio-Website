@@ -8,4 +8,4 @@ The source of each project image is recorded in `visuals.js` and described on it
 
 The project pages include a GiftyView screen gallery and local preview, Lincoln output switcher, and code-derived explainers for the other work. Animations respect reduced-motion preferences. The original React implementation remains in `src/` for reference and is not included in the current page entry points.
 
-Do not deploy until Eghosa approves the local review.
+The portfolio was approved for publication on 10 November 2026. The GitHub source and the public hosting URL should be checked separately after each release.

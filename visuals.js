@@ -50,7 +50,7 @@ export const visuals = {
   afrorave: {
     kind: 'capture', src: 'assets/evidence/afrorave-vendor-signup-complete.jpg',
     label: 'Local frontend capture · empty form',
-    alt: 'Empty vendor sign-up screen from the local AfroRave team frontend',
+    alt: 'Complete empty vendor sign-up form from the local AfroRave team frontend',
     roles: 'frontend', scope: 'Selected creator and vendor screens and responsive fixes'
   }
 };

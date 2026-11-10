@@ -21,7 +21,7 @@
 .story-card:hover .card-cover{transform:scale(1.055) translate(var(--pointer-x),var(--pointer-y))}
 .kind-plot .card-cover,.visual-edusmart .card-cover{object-fit:contain;background:#e6e9dc;padding:28px 20px}
 .visual-edusmart .card-cover{background:#e8e5f1;padding:18px 10px}
-.visual-afrorave .card-cover{object-position:center 18%}
+.visual-afrorave .card-cover{object-fit:contain;object-position:center;background:#484848;padding:10px 0}
 .story-card-top{position:absolute;top:14px;left:15px;right:15px;z-index:3;display:flex;justify-content:space-between;gap:16px;color:#222a24;font-size:9px;letter-spacing:.12em;font-weight:900;text-transform:uppercase}
 .story-card-top span{background:#f9f4e9e8;padding:7px 9px;max-width:66%;line-height:1.35}.story-card-top span:last-child{text-align:right}
 .story-card-proof{position:absolute;bottom:15px;left:15px;z-index:3;background:#f9f4e9;padding:7px 9px;color:#2e3a31;font-size:10px;letter-spacing:.04em;font-weight:900}
@@ -51,7 +51,7 @@
 .case-hero-visual.has-cover>span{left:17px;top:17px;background:#f9f4e9;max-width:calc(100% - 34px);padding:8px 10px;line-height:1.35;color:#202924}
 .case-hero-visual.has-cover>b{font-size:26px;right:16px;bottom:16px;width:34px;height:34px;display:grid;place-items:center;background:#f9f4e9;border-radius:50%}
 .case-hero-visual.has-cover.visual-lincoln .case-cover,.case-hero-visual.has-cover.visual-edusmart .case-cover{object-fit:contain;background:#e8e7db;padding:30px}
-.case-hero-visual.has-cover.visual-afrorave .case-cover{object-position:center 20%}
+.case-hero-visual.has-cover.visual-afrorave .case-cover{object-fit:contain;object-position:center;background:#484848}
 .case-hero-visual.visual-giftyview.has-cover{background:linear-gradient(135deg,#f1dfbd,#d1ae81)}
 .hero-device{position:absolute;z-index:1;right:9%;top:8%;height:86%;aspect-ratio:370/712;border:9px solid #4b3027;border-radius:28px;background:white;overflow:hidden;box-shadow:18px 15px 0 #62422e35;transform:rotate(4deg)}
 .hero-device img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
