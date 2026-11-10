@@ -12,9 +12,9 @@ export const visuals = {
     roles: 'frontend mobile', scope: 'Flutter app, admin portal and web experience; backend collaboration'
   },
   elixir: {
-    kind: 'concept', src: 'assets/concept/elixir.webp',
-    label: 'Concept artwork · no patient data',
-    alt: 'Print collage representing an existing hospital system connected to maternity and wallet modules',
+    kind: 'capture', src: 'assets/evidence/elixir-clinical-dashboard.png',
+    label: 'Actual local dashboard · no patient data',
+    alt: 'Elixir clinical dashboard captured from the local hospital management system, showing its module navigation without patient records',
     roles: 'backend mobile', scope: 'Maternity, interface, wallet and patient mobile extensions'
   },
   miauditops: {
@@ -52,5 +52,11 @@ export const visuals = {
     label: 'Local frontend capture · empty form',
     alt: 'Complete empty vendor sign-up form from the local AfroRave team frontend',
     roles: 'frontend', scope: 'Selected creator and vendor screens and responsive fixes'
+  },
+  'iron-discipline': {
+    kind: 'device', src: 'assets/evidence/iron-discipline-training.jpg',
+    label: 'Actual app screen · demo state',
+    alt: 'Iron Discipline training screen captured from the React Native app in an isolated local browser build',
+    roles: 'mobile frontend', scope: 'React Native fitness app with workouts, nutrition, habits and progress tracking'
   }
 };

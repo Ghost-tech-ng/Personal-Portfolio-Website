@@ -61,13 +61,13 @@ export const cases = [
       ['Connect mobile to the core', 'The patient app uses the system’s backend rather than operating as a disconnected demo.'],
       ['Keep clinical examples safe', 'Published walkthroughs will use anonymised or clearly synthetic records.']
     ],
-    seeTitle: 'See how the pieces connect.', seeCopy: 'This scope map is based on the local code. The visual is concept artwork; no patient record or live clinical screen is shown.', media: 'elixir',
+    seeTitle: 'Inspect the clinical dashboard.', seeCopy: 'This is an actual screen from the local Elixir HMS source, shown without patient records. It gives context for the existing platform I extended; it does not imply I built the original dashboard or every module.', media: 'elixir',
     proofs: [
       ['SOURCE', 'Existing HMS and mobile modules', 'The local codebase contains the PHP system and patient mobile work.'],
       ['STATUS', 'Real clinical use', 'You confirmed that hospitals or clinical staff use Elixir.'],
-      ['NEXT CAPTURE', 'Anonymised workflow', 'Add actual maternity and patient-app screens after replacing identifiable records.']
+      ['LOCAL CAPTURE', 'Clinical dashboard', 'An actual dashboard screenshot from the local HMS source. It contains module navigation and no patient records.', 'assets/evidence/elixir-clinical-dashboard.png']
     ],
-    limit: 'The original HMS predates my extensions. The diagram is explanatory; it is not a screenshot of a hospital deployment.'
+    limit: 'The original HMS predates my extensions. The dashboard shows the existing product context, not sole authorship of the platform or evidence of any particular deployment.'
   },
   {
     slug: 'miauditops', number: '04', title: 'MiAuditOps', category: 'AUDIT + INVENTORY / FULL STACK', kicker: 'Make a stock movement explainable.',
@@ -193,5 +193,29 @@ export const cases = [
       ['LOCAL CAPTURE', 'Complete vendor sign-up', 'Complete empty vendor form captured from the local team build; no personal details were entered.', 'assets/evidence/afrorave-vendor-signup-complete.jpg']
     ],
     limit: 'I do not claim to have built the complete frontend. Some local vendor views were backed by mock data.'
+  },
+  {
+    slug: 'iron-discipline', number: '10', title: 'Iron Discipline', category: 'FITNESS / REACT NATIVE + EXPO', kicker: 'A training routine that lives in your pocket.',
+    deck: 'My personal mobile app brings workouts, nutrition, habits and progress into one focused daily experience.',
+    status: 'Working build / testing', role: 'Original mobile product', links: [],
+    situationTitle: 'A plan needs a usable daily surface.',
+    situation: 'Training, food and habits are easy to track in separate places. The app combines them into a daily view and gives each activity a clear next action.',
+    fact: 'This is my own React Native and Expo app. It is a working build under testing, not a public release.',
+    contributionTitle: 'I built the mobile product.',
+    contribution: 'I developed the app screens and local data flow for workout sessions, nutrition logging, habit tracking and progress. The project uses SQLite for on-device records and state stores for the interface.',
+    decisions: [
+      ['Put training first', 'The Train view shows a weekly split, today’s session and the exercises behind it.'],
+      ['Keep the daily picture together', 'Workout, food and habit views share a consistent navigation and visual system.'],
+      ['Keep records on the device', 'The app uses local storage for day-to-day tracking and can show its current sync state.']
+    ],
+    seeTitle: 'See the real training screen.',
+    seeCopy: 'Captured from the actual React Native screen in an isolated browser build with a demo profile. The browser capture bypasses the mobile-only database startup; the visible training interface comes from the app code.',
+    media: 'iron-discipline',
+    proofs: [
+      ['LOCAL CAPTURE', 'Training screen', 'Actual React Native training screen from the local app source, shown with a demo profile.', 'assets/evidence/iron-discipline-training.jpg'],
+      ['SOURCE', 'Mobile app code', 'The local Expo project contains workout, nutrition, habits and progress screens plus SQLite storage.'],
+      ['STATUS', 'Working build / testing', 'The app has not been presented as publicly launched or as having measured user results.']
+    ],
+    limit: 'The screenshot comes from an isolated browser build with demo state. It demonstrates the app interface; it is not a production release or a proof of sync behavior.'
   }
 ];

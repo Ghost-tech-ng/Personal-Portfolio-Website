@@ -15,7 +15,7 @@ if (!project) {
 } else {
   document.title = `${project.title} — Eghosa Ephraim`;
   const set = (selector, value) => { document.querySelector(selector).textContent = value; };
-  set('#case-number', `PROJECT ${project.number} / 09`);
+  set('#case-number', `PROJECT ${project.number} / ${cases.length}`);
   set('#case-category', project.category);
   set('#case-kicker', project.kicker);
   set('#case-title', project.title);
@@ -38,6 +38,8 @@ if (!project) {
   visual.querySelector('span').textContent = visualData.label;
   if (slug === 'giftyview') {
     visual.insertAdjacentHTML('beforeend', '<img class="hero-gifty-logo-fixed" src="assets/evidence/giftyview-logo.png" alt="" /><div class="hero-device"><img src="assets/evidence/giftyview-home-screen.webp" alt="" /></div>');
+  } else if (slug === 'iron-discipline') {
+    visual.insertAdjacentHTML('beforeend', '<div class="hero-device"><img src="assets/evidence/iron-discipline-training.jpg" alt="" /></div><strong class="hero-gym-wordmark" aria-hidden="true">IRON<br>DISCIPLINE</strong>');
   } else {
     visual.insertAdjacentHTML('afterbegin', `<img class="case-cover" src="${visualData.src}" alt="" decoding="async" />`);
   }
@@ -192,6 +194,8 @@ function renderMedia(type) {
     target.querySelector('[data-add]').addEventListener('click', () => { pending += 1; target.querySelector('#sync-output').textContent = 'A synthetic record was added to the local queue.'; update(); });
     target.querySelector('[data-connect]').addEventListener('click', () => { online = true; const sent = pending; pending = 0; target.querySelector('#sync-output').textContent = sent ? `${sent} synthetic ${sent===1?'record':'records'} moved from waiting to sent in this explainer.` : 'Connected. There is nothing waiting to send.'; update(); });
     target.querySelector('[data-offline]').addEventListener('click', () => { online = false; target.querySelector('#sync-output').textContent = 'Offline again. New changes will wait locally.'; update(); });
+  } else if (type === 'iron-discipline') {
+    target.innerHTML = '<div class="media-notice">ACTUAL APP INTERFACE · Isolated local browser build with a demo profile; no personal workout history is shown.</div><figure class="artifact-figure gym-artifact"><img src="assets/evidence/iron-discipline-training.jpg" loading="lazy" alt="Iron Discipline training screen from the React Native app" /><figcaption>The Train tab from the local React Native and Expo codebase. The browser capture uses demo state because the mobile database startup is unavailable in this preview.</figcaption></figure>';
   } else {
     const flows = {
       elixir: [['Existing HMS','The original hospital system was already in use.'],['My extensions','Maternity, interface, wallet and patient mobile work.'],['Clinical workflow','New pieces need to fit how staff and patients use the system.']],
@@ -200,7 +204,7 @@ function renderMedia(type) {
     };
     target.innerHTML = `<div class="media-notice">SCOPE MAP · This is an explanatory diagram, not a product screenshot.</div><div class="static-flow">${flows[type].map(([title,copy])=>`<div><b>${title.toUpperCase()}</b><p>${copy}</p></div>`).join('')}</div>`;
     if (type === 'elixir') {
-      target.insertAdjacentHTML('beforeend', '<div class="concept-explainer"><img src="assets/concept/elixir.webp" loading="lazy" alt="Concept artwork of hospital workflow, maternity and wallet modules" /><img src="assets/evidence/elixir-logo.svg" loading="lazy" alt="Elixir logo from local project files" /><p>Illustration derived from the extension scope, paired with the logo in the local codebase. No patient screenshot or patient data is shown.</p></div>');
+      target.insertAdjacentHTML('beforeend', '<figure class="artifact-figure wide"><img src="assets/evidence/elixir-clinical-dashboard.png" loading="lazy" alt="Elixir clinical dashboard module navigation from the local HMS source" /><figcaption>Actual clinical dashboard from the existing Elixir HMS. It contains no patient records. I extended this product; I did not build the original platform or every dashboard module.</figcaption></figure>');
     } else if (type === 'edusmart') {
       target.insertAdjacentHTML('beforeend', '<figure class="artifact-figure wide"><img src="assets/evidence/edusmart-admin.webp" loading="lazy" alt="EduSmart360 admin dashboard from local brochure materials" /><figcaption>Local brochure capture of the EduSmart admin dashboard. The counts and financial values visible in this demo screen are not live school adoption metrics.</figcaption></figure>');
     } else if (type === 'afrorave') {

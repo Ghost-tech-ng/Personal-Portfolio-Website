@@ -22,6 +22,12 @@
 .kind-plot .card-cover,.visual-edusmart .card-cover{object-fit:contain;background:#e6e9dc;padding:28px 20px}
 .visual-edusmart .card-cover{background:#e8e5f1;padding:18px 10px}
 .visual-afrorave .card-cover{object-fit:contain;object-position:center;background:#484848;padding:10px 0}
+.visual-elixir .card-cover{object-fit:contain;background:#d3dfe7;padding:32px 8px 10px}
+.visual-iron-discipline{background:radial-gradient(circle at 25% 35%,#85333a 0,#301e20 45%,#151311 100%)}
+.visual-iron-discipline .card-device{aspect-ratio:390/844;right:13%;top:7%;height:86%;border-color:#0c0b0b;background:#151311;box-shadow:16px 16px 0 #07060655}
+.visual-iron-discipline .card-device img{object-fit:contain}
+.visual-iron-discipline .device-camera{background:#0c0b0b}
+.card-device-wordmark{position:absolute;left:7%;top:43%;color:#f4eee5;font-size:clamp(19px,2.2vw,29px);font-weight:950;line-height:.88;letter-spacing:-.07em;transform:rotate(-5deg)}
 .story-card-top{position:absolute;top:14px;left:15px;right:15px;z-index:3;display:flex;justify-content:space-between;gap:16px;color:#222a24;font-size:9px;letter-spacing:.12em;font-weight:900;text-transform:uppercase}
 .story-card-top span{background:#f9f4e9e8;padding:7px 9px;max-width:66%;line-height:1.35}.story-card-top span:last-child{text-align:right}
 .story-card-proof{position:absolute;bottom:15px;left:15px;z-index:3;background:#f9f4e9;padding:7px 9px;color:#2e3a31;font-size:10px;letter-spacing:.04em;font-weight:900}
@@ -52,6 +58,12 @@
 .case-hero-visual.has-cover>b{font-size:26px;right:16px;bottom:16px;width:34px;height:34px;display:grid;place-items:center;background:#f9f4e9;border-radius:50%}
 .case-hero-visual.has-cover.visual-lincoln .case-cover,.case-hero-visual.has-cover.visual-edusmart .case-cover{object-fit:contain;background:#e8e7db;padding:30px}
 .case-hero-visual.has-cover.visual-afrorave .case-cover{object-fit:contain;object-position:center;background:#484848}
+.case-hero-visual.has-cover.visual-elixir .case-cover{object-fit:contain;background:#d3dfe7;padding:38px 8px 12px}
+.case-hero-visual.visual-iron-discipline.has-cover{background:radial-gradient(circle at 25% 35%,#85333a 0,#301e20 45%,#151311 100%)}
+.visual-iron-discipline .hero-device{aspect-ratio:390/844;right:11%;height:87%;top:7%;border-color:#0c0b0b;background:#151311;box-shadow:18px 15px 0 #07060655}
+.visual-iron-discipline .hero-device img{object-fit:contain}
+.visual-iron-discipline .hero-device::after{background:#0c0b0b}
+.hero-gym-wordmark{position:absolute;left:6%;top:42%;color:#f4eee5;font-size:clamp(28px,3vw,42px);line-height:.88;letter-spacing:-.08em;transform:rotate(-5deg)}
 .case-hero-visual.visual-giftyview.has-cover{background:linear-gradient(135deg,#f1dfbd,#d1ae81)}
 .hero-device{position:absolute;z-index:1;right:9%;top:8%;height:86%;aspect-ratio:370/712;border:9px solid #4b3027;border-radius:28px;background:white;overflow:hidden;box-shadow:18px 15px 0 #62422e35;transform:rotate(4deg)}
 .hero-device img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
@@ -71,6 +83,7 @@
 .artifact-figure{margin:26px 0 0;border:1px solid #c2c8ba;background:#f9f7f1;padding:12px}.artifact-figure img{display:block;width:100%;height:auto}.artifact-figure figcaption{font-size:12px;line-height:1.5;color:#4e5b50;padding:12px 2px 3px}
 .artifact-figure.narrow{max-width:370px;margin-left:auto;margin-right:auto}.artifact-figure.narrow img{max-height:620px;object-fit:contain}
 .artifact-figure.wide img{max-height:560px;object-fit:contain}
+.gym-artifact{max-width:440px;margin-left:auto;margin-right:auto;background:#171411;border-color:#403632}.gym-artifact img{width:100%;height:auto;max-height:none;object-fit:contain}.gym-artifact figcaption{color:#e5ddd0}
 .artifact-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin-top:24px}
 .artifact-pair .artifact-figure{margin:0}.artifact-pair .artifact-figure img{height:280px;object-fit:contain}
 .concept-explainer{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:20px;align-items:center;margin:22px 0;padding:15px;border:1px solid #c4c9be;background:#f9f7f1}.concept-explainer img:first-child{width:100%;height:auto}.concept-explainer img:nth-child(2){width:100%;height:auto}.concept-explainer p{grid-column:1/-1;margin:0;font-size:12px;color:#5d675d}
@@ -81,4 +94,5 @@
 @media(max-width:1100px){.story-card{grid-column:span 3}.story-card-visual,.story-card-feature .story-card-visual{height:265px}.work-evidence-key>span:last-child{margin-left:0;width:100%}}
 @media(max-width:700px){.project-gallery{gap:15px}.story-card,.story-card-feature{grid-column:span 6}.story-card-visual,.story-card-feature .story-card-visual{height:285px}.story-card-info{min-height:0}.work-endcap{display:block}.work-endcap p{margin:9px 0}.work-endcap a{display:inline-block;margin-top:4px}.case-hero-visual.has-cover{min-height:280px}.hero-device{height:84%;right:12%;top:8%;border-width:7px}.hero-gifty-logo-fixed{width:36%;top:48%}.case-hero-visual.has-cover>span{font-size:9px}.artifact-pair{grid-template-columns:1fr}.artifact-pair .artifact-figure img{height:auto;max-height:360px}}
 @media(max-width:430px){.work-evidence-key{font-size:10px}.story-card-visual,.story-card-feature .story-card-visual{height:248px}.story-card-top{font-size:8px}.story-card-info h3{font-size:31px}.story-card-meta{font-size:9px}.story-card-info{padding:17px}.card-device{right:11%;height:78%}.case-hero-visual.has-cover{min-height:230px}.hero-device{height:82%;right:9%;border-width:6px;border-radius:17px}.cover-proof{font-size:8px}.gallery-stage{padding:18px;min-height:320px}.gallery-phone{height:340px}.concept-explainer{grid-template-columns:1fr}.concept-explainer img:nth-child(2){max-width:130px}}
+@media(max-width:430px){.visual-iron-discipline .card-device{right:11%;height:82%}.visual-iron-discipline .hero-device{right:9%;height:84%}.hero-gym-wordmark{font-size:clamp(23px,7vw,34px)}.card-device-wordmark{font-size:23px}}
 @media(prefers-reduced-motion:reduce){.read-progress{display:none}.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}.hero-copy,.hero-art,.case-cover{animation:none}.card-cover,.card-device,.story-card,.story-card-arrow,.next-case a strong{transition:none!important}.story-card:hover .card-cover{transform:none}.story-card:hover .card-device{transform:rotate(3deg)}}
