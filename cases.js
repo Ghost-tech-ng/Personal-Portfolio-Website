@@ -208,14 +208,14 @@ export const cases = [
       ['Keep the daily picture together', 'Workout, food and habit views share a consistent navigation and visual system.'],
       ['Keep records on the device', 'The app uses local storage for day-to-day tracking and can show its current sync state.']
     ],
-    seeTitle: 'See the real training screen.',
-    seeCopy: 'Captured from the actual React Native screen in an isolated browser build with a demo profile. The browser capture bypasses the mobile-only database startup; the visible training interface comes from the app code.',
+    seeTitle: 'Move through the app.',
+    seeCopy: 'Start at Forge home, then switch between Training, Fuel, Progress and Habits. These five screens were captured from the actual React Native components in an isolated browser build with demo state. The mobile database is not connected in this preview.',
     media: 'iron-discipline',
     proofs: [
-      ['LOCAL CAPTURE', 'Training screen', 'Actual React Native training screen from the local app source, shown with a demo profile.', 'assets/evidence/iron-discipline-training.jpg'],
+      ['LOCAL CAPTURE', 'Five app screens', 'Forge home, Training, Fuel, Progress and Habits were captured from the local React Native app with a demo profile and no logged personal records.', 'assets/evidence/iron-discipline-home.jpg'],
       ['SOURCE', 'Mobile app code', 'The local Expo project contains workout, nutrition, habits and progress screens plus SQLite storage.'],
       ['STATUS', 'Working build / testing', 'The app has not been presented as publicly launched or as having measured user results.']
     ],
-    limit: 'The screenshot comes from an isolated browser build with demo state. It demonstrates the app interface; it is not a production release or a proof of sync behavior.'
+    limit: 'The screen gallery uses an isolated browser build with a demo profile and the app’s default targets. It demonstrates the interface, not a production release, personal tracking history or proof of sync behavior.'
   }
 ];

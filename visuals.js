@@ -54,9 +54,9 @@ export const visuals = {
     roles: 'frontend', scope: 'Selected creator and vendor screens and responsive fixes'
   },
   'iron-discipline': {
-    kind: 'device', src: 'assets/evidence/iron-discipline-training.jpg',
-    label: 'Actual app screen · demo state',
-    alt: 'Iron Discipline training screen captured from the React Native app in an isolated local browser build',
+    kind: 'device', src: 'assets/evidence/iron-discipline-home.jpg',
+    label: 'Actual Forge home · demo state',
+    alt: 'Iron Discipline Forge home screen captured from the React Native app in an isolated local browser build',
     roles: 'mobile frontend', scope: 'React Native fitness app with workouts, nutrition, habits and progress tracking'
   }
 };

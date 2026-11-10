@@ -39,7 +39,7 @@ if (!project) {
   if (slug === 'giftyview') {
     visual.insertAdjacentHTML('beforeend', '<img class="hero-gifty-logo-fixed" src="assets/evidence/giftyview-logo.png" alt="" /><div class="hero-device"><img src="assets/evidence/giftyview-home-screen.webp" alt="" /></div>');
   } else if (slug === 'iron-discipline') {
-    visual.insertAdjacentHTML('beforeend', '<div class="hero-device"><img src="assets/evidence/iron-discipline-training.jpg" alt="" /></div><strong class="hero-gym-wordmark" aria-hidden="true">IRON<br>DISCIPLINE</strong>');
+    visual.insertAdjacentHTML('beforeend', '<div class="hero-device"><img src="assets/evidence/iron-discipline-home.jpg" alt="" /></div><strong class="hero-gym-wordmark" aria-hidden="true">IRON<br>DISCIPLINE</strong>');
   } else {
     visual.insertAdjacentHTML('afterbegin', `<img class="case-cover" src="${visualData.src}" alt="" decoding="async" />`);
   }
@@ -195,14 +195,46 @@ function renderMedia(type) {
     target.querySelector('[data-connect]').addEventListener('click', () => { online = true; const sent = pending; pending = 0; target.querySelector('#sync-output').textContent = sent ? `${sent} synthetic ${sent===1?'record':'records'} moved from waiting to sent in this explainer.` : 'Connected. There is nothing waiting to send.'; update(); });
     target.querySelector('[data-offline]').addEventListener('click', () => { online = false; target.querySelector('#sync-output').textContent = 'Offline again. New changes will wait locally.'; update(); });
   } else if (type === 'iron-discipline') {
-    target.innerHTML = '<div class="media-notice">ACTUAL APP INTERFACE · Isolated local browser build with a demo profile; no personal workout history is shown.</div><figure class="artifact-figure gym-artifact"><img src="assets/evidence/iron-discipline-training.jpg" loading="lazy" alt="Iron Discipline training screen from the React Native app" /><figcaption>The Train tab from the local React Native and Expo codebase. The browser capture uses demo state because the mobile database startup is unavailable in this preview.</figcaption></figure>';
+    target.innerHTML = `
+      <div class="media-notice">FIVE ACTUAL APP SCREENS · Local browser build with demo state; no personal workout history is shown.</div>
+      <div class="story-gallery gym-gallery">
+        <div class="story-gallery-head"><span>FROM FORGE TO THE DAILY RECORD</span><small>Select a screen to look closer</small></div>
+        <div class="screen-tabs" role="group" aria-label="Choose Iron Discipline screen">
+          <button type="button" data-gym-screen="home" aria-selected="true">01 · Forge home</button>
+          <button type="button" data-gym-screen="training" aria-selected="false">02 · Training</button>
+          <button type="button" data-gym-screen="fuel" aria-selected="false">03 · Fuel</button>
+          <button type="button" data-gym-screen="progress" aria-selected="false">04 · Progress</button>
+          <button type="button" data-gym-screen="habits" aria-selected="false">05 · Habits</button>
+        </div>
+        <div class="gallery-stage"><div class="gallery-phone"><img id="gym-gallery-image" src="assets/evidence/iron-discipline-home.jpg" alt="Iron Discipline Forge home screen in demo state" /></div><div class="gym-gallery-aside"><span id="gym-gallery-number">01 / 05</span><h3 id="gym-gallery-title">Forge home</h3><p id="gym-gallery-caption">The daily overview brings the current routine, training prompt and habit score into one place.</p><a id="gym-gallery-full" href="assets/evidence/iron-discipline-home.jpg" target="_blank" rel="noopener noreferrer">Open full screen ↗</a></div></div>
+      </div>`;
+    const screens = {
+      home: ['home', 'Forge home', 'Iron Discipline Forge home screen in demo state', 'The daily overview brings the current routine, training prompt and habit score into one place.'],
+      training: ['training', 'Training', 'Iron Discipline weekly training screen in demo state', 'The weekly split shows today’s session and the exercises behind each training day.'],
+      fuel: ['fuel', 'Fuel', 'Iron Discipline nutrition screen in demo state', 'The nutrition view brings meal timing, food logging and water tracking together. Its targets come from the app’s default state.'],
+      progress: ['progress', 'Progress', 'Iron Discipline progress screen in demo state', 'Charts and check-ins show empty states until someone logs records. The displayed goals come from the app’s defaults.'],
+      habits: ['habits', 'Habits', 'Iron Discipline habits screen in demo state', 'The daily checklist puts small repeatable actions next to a simple completion indicator.']
+    };
+    target.querySelectorAll('[data-gym-screen]').forEach(button => button.addEventListener('click', () => {
+      const [file, title, alt, caption] = screens[button.dataset.gymScreen];
+      const src = `assets/evidence/iron-discipline-${file}.jpg`;
+      const image = target.querySelector('#gym-gallery-image');
+      image.src = src;
+      image.alt = alt;
+      target.querySelector('#gym-gallery-number').textContent = `${String(Object.keys(screens).indexOf(button.dataset.gymScreen) + 1).padStart(2, '0')} / 05`;
+      target.querySelector('#gym-gallery-title').textContent = title;
+      target.querySelector('#gym-gallery-caption').textContent = caption;
+      target.querySelector('#gym-gallery-full').href = src;
+      target.querySelectorAll('[data-gym-screen]').forEach(tab => tab.setAttribute('aria-selected', String(tab === button)));
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && image.animate) image.animate([{opacity:.35,transform:'translateY(10px)'},{opacity:1,transform:'translateY(0)'}],{duration:300,easing:'ease-out'});
+    }));
   } else {
     const flows = {
       elixir: [['Existing HMS','The original hospital system was already in use.'],['My extensions','Maternity, interface, wallet and patient mobile work.'],['Clinical workflow','New pieces need to fit how staff and patients use the system.']],
       edusmart: [['Original system','PHP/CodeIgniter, MySQL and web interface code.'],['School onboarding','Two schools are currently being onboarded.'],['Evidence shown','Local brochure capture with demonstration values.']],
       afrorave: [['Creator side','Dashboard, settings and event-selection work.'],['Vendor side','Signup, profile, dashboard and slot flows.'],['Team source','Authored commits support specific feature attribution.']]
     };
-    target.innerHTML = `<div class="media-notice">SCOPE MAP · This is an explanatory diagram, not a product screenshot.</div><div class="static-flow">${flows[type].map(([title,copy])=>`<div><b>${title.toUpperCase()}</b><p>${copy}</p></div>`).join('')}</div>`;
+    target.innerHTML = `<div class="media-notice">SCOPE NOTES · The short summary below explains my role; any product capture that follows is labelled separately.</div><div class="static-flow">${flows[type].map(([title,copy])=>`<div><b>${title.toUpperCase()}</b><p>${copy}</p></div>`).join('')}</div>`;
     if (type === 'elixir') {
       target.insertAdjacentHTML('beforeend', '<figure class="artifact-figure wide"><img src="assets/evidence/elixir-clinical-dashboard.png" loading="lazy" alt="Elixir clinical dashboard module navigation from the local HMS source" /><figcaption>Actual clinical dashboard from the existing Elixir HMS. It contains no patient records. I extended this product; I did not build the original platform or every dashboard module.</figcaption></figure>');
     } else if (type === 'edusmart') {

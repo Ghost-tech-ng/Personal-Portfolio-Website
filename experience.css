@@ -80,6 +80,17 @@
 .gallery-phone{height:430px;aspect-ratio:370/712;border:9px solid #50382d;border-radius:28px;overflow:hidden;background:white;box-shadow:16px 18px 0 #50382d2a;position:relative}
 .gallery-phone img{width:100%;height:100%;object-fit:cover;display:block;object-position:top}.gallery-phone::after{content:"";position:absolute;top:3px;left:50%;width:36%;height:7px;border-radius:0 0 7px 7px;background:#50382d;transform:translateX(-50%)}
 .gallery-caption{font-size:12px;line-height:1.5;color:#5d665c;margin:13px 0 0}
+.gym-gallery .screen-tabs button[aria-selected="true"]{background:#ae203c;border-color:#ae203c;color:#fff}
+.gym-gallery .gallery-stage{gap:clamp(25px,5vw,70px);background:radial-gradient(circle at 25% 36%,#693039 0,#2b1c1d 45%,#151311 100%);border-color:#483335;min-height:600px}
+.gym-gallery .gallery-phone{height:520px;aspect-ratio:390/844;border-color:#090909;background:#111;box-shadow:18px 18px 0 #09070766;flex:none}
+.gym-gallery .gallery-phone img{object-fit:contain}
+.gym-gallery .gallery-phone::after{background:#090909}
+.gym-gallery-aside{color:#f6eee4;max-width:250px;align-self:center}
+.gym-gallery-aside>span{font-size:11px;font-weight:900;letter-spacing:.15em;color:#ff5470}
+.gym-gallery-aside h3{font-size:clamp(31px,3.4vw,48px);line-height:1;letter-spacing:-.055em;margin:16px 0 14px}
+.gym-gallery-aside p{font-size:14px;line-height:1.6;color:#e3d5cf;margin:0 0 22px}
+.gym-gallery-aside a{display:inline-block;color:#fff;border-bottom:1px solid #f6eee4;padding-bottom:5px;font-size:12px;font-weight:900}
+.gym-gallery-aside a:hover{color:#ff788a;border-color:#ff788a}
 .artifact-figure{margin:26px 0 0;border:1px solid #c2c8ba;background:#f9f7f1;padding:12px}.artifact-figure img{display:block;width:100%;height:auto}.artifact-figure figcaption{font-size:12px;line-height:1.5;color:#4e5b50;padding:12px 2px 3px}
 .artifact-figure.narrow{max-width:370px;margin-left:auto;margin-right:auto}.artifact-figure.narrow img{max-height:620px;object-fit:contain}
 .artifact-figure.wide img{max-height:560px;object-fit:contain}
@@ -93,6 +104,8 @@
 
 @media(max-width:1100px){.story-card{grid-column:span 3}.story-card-visual,.story-card-feature .story-card-visual{height:265px}.work-evidence-key>span:last-child{margin-left:0;width:100%}}
 @media(max-width:700px){.project-gallery{gap:15px}.story-card,.story-card-feature{grid-column:span 6}.story-card-visual,.story-card-feature .story-card-visual{height:285px}.story-card-info{min-height:0}.work-endcap{display:block}.work-endcap p{margin:9px 0}.work-endcap a{display:inline-block;margin-top:4px}.case-hero-visual.has-cover{min-height:280px}.hero-device{height:84%;right:12%;top:8%;border-width:7px}.hero-gifty-logo-fixed{width:36%;top:48%}.case-hero-visual.has-cover>span{font-size:9px}.artifact-pair{grid-template-columns:1fr}.artifact-pair .artifact-figure img{height:auto;max-height:360px}}
+@media(max-width:700px){.gym-gallery .gallery-stage{flex-direction:column;gap:24px;padding:22px;min-height:0}.gym-gallery .gallery-phone{height:430px}.gym-gallery-aside{align-self:stretch;max-width:none}.gym-gallery-aside h3{font-size:33px;margin:8px 0}.gym-gallery-aside p{margin-bottom:10px}}
 @media(max-width:430px){.work-evidence-key{font-size:10px}.story-card-visual,.story-card-feature .story-card-visual{height:248px}.story-card-top{font-size:8px}.story-card-info h3{font-size:31px}.story-card-meta{font-size:9px}.story-card-info{padding:17px}.card-device{right:11%;height:78%}.case-hero-visual.has-cover{min-height:230px}.hero-device{height:82%;right:9%;border-width:6px;border-radius:17px}.cover-proof{font-size:8px}.gallery-stage{padding:18px;min-height:320px}.gallery-phone{height:340px}.concept-explainer{grid-template-columns:1fr}.concept-explainer img:nth-child(2){max-width:130px}}
 @media(max-width:430px){.visual-iron-discipline .card-device{right:11%;height:82%}.visual-iron-discipline .hero-device{right:9%;height:84%}.hero-gym-wordmark{font-size:clamp(23px,7vw,34px)}.card-device-wordmark{font-size:23px}}
+@media(max-width:430px){.gym-gallery .gallery-phone{height:390px}.gym-gallery .gallery-stage{padding:20px 12px}.gym-gallery .screen-tabs button{padding:9px 10px}}
 @media(prefers-reduced-motion:reduce){.read-progress{display:none}.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}.hero-copy,.hero-art,.case-cover{animation:none}.card-cover,.card-device,.story-card,.story-card-arrow,.next-case a strong{transition:none!important}.story-card:hover .card-cover{transform:none}.story-card:hover .card-device{transform:rotate(3deg)}}
