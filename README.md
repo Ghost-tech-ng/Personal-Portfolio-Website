@@ -1,16 +1,11 @@
-# React + Vite
+# Eghosa Ephraim Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Working Systems Atelier portfolio, built with Vite. The homepage and nine project stories are separate static pages. Each story names Eghosa's contribution and distinguishes local captures, sample-data interface builds, exploratory outputs, and generated concept artwork.
 
-Currently, two official plugins are available:
+Run `npm ci`, then `npm run dev` for local review. Run `npm run build` before publishing. Netlify publishes `dist` using `netlify.toml`. The build uses Vite's runner config loader so Windows paths work consistently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The source of each project image is recorded in `visuals.js` and described on its case page. GiftyView screens come from a local UI build and contain sample financial data. The EduSmart brochure screen contains demo values. Aedion's eye-scan image is a development test capture. Lincoln plots are exploratory pipeline outputs. Elixir, MiAuditOps, PipeUp, HarvestLink and Aedion covers use generated illustrations and are labelled as such. No clinical, client or pilot records are published in these assets.
 
-## React Compiler
+The project pages include a GiftyView screen gallery and local preview, Lincoln output switcher, and code-derived explainers for the other work. Animations respect reduced-motion preferences. The original React implementation remains in `src/` for reference and is not included in the current page entry points.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Do not deploy until Eghosa approves the local review.

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<title>ELIXIR heart pulse logo</title>
+<desc>Blue heart outline integrated with an electrocardiogram pulse line.</desc>
+<g fill="none" stroke="#173B9A" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+<path d="M116 267 C91 236 81 201 88 164 C98 111 141 76 194 76 C226 76 251 91 272 119 C294 84 326 65 365 65 C425 65 467 111 468 171 C469 185 467 198 463 211"/>
+<path d="M116 267 C134 304 166 339 204 377 L278 450"/>
+<path d="M58 269 H145 L177 187 L230 294 L260 164 L290 216 H448"/>
+</g></svg>

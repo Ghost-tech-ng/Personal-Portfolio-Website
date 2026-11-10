@@ -1,0 +1,84 @@
+/* Project index and story system. Evidence labels are part of the design. */
+.read-progress{position:fixed;inset:0 0 auto;height:3px;background:var(--blue);z-index:100;transform:scaleX(0);transform-origin:left;pointer-events:none}
+.motion-ready [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .7s ease var(--reveal-delay,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms)}
+.motion-ready [data-reveal].is-visible{opacity:1;transform:translateY(0)}
+.hero-copy{animation:arrival-copy .8s both}.hero-art{animation:arrival-art .9s .12s both}
+@keyframes arrival-copy{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes arrival-art{from{opacity:0;transform:translateY(22px) rotate(1deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+
+.work-evidence-key{display:flex;align-items:center;flex-wrap:wrap;gap:13px 25px;margin:11px 0 24px;padding:17px 0;border-top:1px solid var(--ink);font-size:11px;font-weight:800;letter-spacing:.02em}
+.work-evidence-key>span{display:inline-flex;align-items:center;gap:8px}.work-evidence-key>span:last-child{margin-left:auto;color:#697168;font-weight:600}
+.key-dot{display:inline-block;width:11px;height:11px;border:1px solid var(--ink);border-radius:50%}.key-real{background:var(--blue)}.key-concept{background:#dfae72}
+.project-gallery{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px;align-items:stretch}
+.story-card{grid-column:span 2;min-width:0;background:#fbf9f2;border:1px solid #c9ccbf;box-shadow:0 0 0 transparent;transition:box-shadow .25s ease,border-color .25s ease}
+.story-card[hidden]{display:none!important}.story-card-feature{grid-column:span 3}
+.story-card:hover{border-color:#292e29;box-shadow:8px 9px 0 #252b2624}.story-card:focus-within{outline:3px solid var(--blue);outline-offset:3px}
+.story-card-link{display:flex;flex-direction:column;height:100%;color:inherit;text-decoration:none}
+.story-card-visual{height:236px;position:relative;overflow:hidden;isolation:isolate;background:#e6e3d6;border-bottom:1px solid #bfc6ba;--pointer-x:0px;--pointer-y:0px}
+.story-card-feature .story-card-visual{height:295px}
+.story-card-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0002,transparent 22%,transparent 72%,#0005);pointer-events:none;z-index:2}
+.card-cover{width:100%;height:100%;display:block;object-fit:cover;transform:scale(1.01) translate(var(--pointer-x),var(--pointer-y));transition:transform .5s ease;will-change:transform}
+.story-card:hover .card-cover{transform:scale(1.055) translate(var(--pointer-x),var(--pointer-y))}
+.kind-plot .card-cover,.visual-edusmart .card-cover{object-fit:contain;background:#e6e9dc;padding:28px 20px}
+.visual-edusmart .card-cover{background:#e8e5f1;padding:18px 10px}
+.visual-afrorave .card-cover{object-position:center 18%}
+.story-card-top{position:absolute;top:14px;left:15px;right:15px;z-index:3;display:flex;justify-content:space-between;gap:16px;color:#222a24;font-size:9px;letter-spacing:.12em;font-weight:900;text-transform:uppercase}
+.story-card-top span{background:#f9f4e9e8;padding:7px 9px;max-width:66%;line-height:1.35}.story-card-top span:last-child{text-align:right}
+.story-card-proof{position:absolute;bottom:15px;left:15px;z-index:3;background:#f9f4e9;padding:7px 9px;color:#2e3a31;font-size:10px;letter-spacing:.04em;font-weight:900}
+.story-card-arrow{position:absolute;bottom:13px;right:14px;z-index:3;display:grid;place-items:center;width:30px;height:30px;border:1px solid #f9f4e9;border-radius:50%;background:#f9f4e9;color:var(--blue);font-size:19px;transition:transform .25s ease}
+.story-card:hover .story-card-arrow{transform:translate(3px,-3px)}
+.story-card-info{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;min-height:245px}
+.story-card-meta{display:flex;justify-content:space-between;gap:15px;align-items:start;font-size:10px;line-height:1.4;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
+.story-card-meta span{color:#686e64}.story-card-meta strong{color:#2d5844;text-align:right}
+.story-card-info h3{font-size:clamp(29px,2.4vw,39px);line-height:1.04;letter-spacing:-.06em;margin:17px 0 9px}
+.story-card-info p{font-size:14px;line-height:1.5;color:#535c53;margin:0 0 22px}
+.story-card-scope{display:grid;grid-template-columns:58px 1fr;gap:10px;border-top:1px solid #c9d0c3;padding-top:13px;margin-top:auto;font-size:11px;line-height:1.45}
+.story-card-scope b{color:var(--blue);letter-spacing:.08em}.story-card-scope span{font-weight:700;color:#414b43}
+.visual-giftyview{background:linear-gradient(135deg,#f1e1c4,#cfa777)}
+.card-device{position:absolute;z-index:1;right:13%;top:10%;height:80%;aspect-ratio:370/712;border:8px solid #51392e;border-radius:26px;background:#fff;overflow:hidden;box-shadow:17px 16px 0 #50331e33;transform:rotate(3deg);transition:transform .5s ease}
+.story-card:hover .card-device{transform:rotate(0) translateY(-3px)}
+.card-device img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.device-camera{position:absolute;top:4px;left:50%;z-index:2;width:38%;height:8px;border-radius:0 0 7px 7px;background:#51392e;transform:translateX(-50%)}
+.card-product-logo{position:absolute;z-index:1;left:6%;top:41%;width:37%;height:auto;filter:drop-shadow(2px 3px 0 #7f4b1d22)}
+.work-endcap{display:flex;align-items:center;gap:22px;margin-top:32px;padding:23px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.work-endcap span{font-size:10px;font-weight:900;letter-spacing:.12em}.work-endcap p{font-size:13px;color:#666e63;margin:0 auto 0 0}.work-endcap a{font-size:12px;font-weight:900;border-bottom:1px solid var(--ink);padding:5px 0}.work-endcap a:hover{color:var(--blue);border-color:var(--blue)}
+
+/* The cover fills a known frame. Phone screens remain entirely inside their device. */
+.case-hero-visual.has-cover::before,.case-hero-visual.has-cover::after{display:none!important}
+.case-hero-visual.has-cover{background:#e7e2d5;overflow:hidden}
+.case-cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;animation:cover-arrive .9s both}
+@keyframes cover-arrive{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:scale(1)}}
+.case-hero-visual.has-cover>span{left:17px;top:17px;background:#f9f4e9;max-width:calc(100% - 34px);padding:8px 10px;line-height:1.35;color:#202924}
+.case-hero-visual.has-cover>b{font-size:26px;right:16px;bottom:16px;width:34px;height:34px;display:grid;place-items:center;background:#f9f4e9;border-radius:50%}
+.case-hero-visual.has-cover.visual-lincoln .case-cover,.case-hero-visual.has-cover.visual-edusmart .case-cover{object-fit:contain;background:#e8e7db;padding:30px}
+.case-hero-visual.has-cover.visual-afrorave .case-cover{object-position:center 20%}
+.case-hero-visual.visual-giftyview.has-cover{background:linear-gradient(135deg,#f1dfbd,#d1ae81)}
+.hero-device{position:absolute;z-index:1;right:9%;top:8%;height:86%;aspect-ratio:370/712;border:9px solid #4b3027;border-radius:28px;background:white;overflow:hidden;box-shadow:18px 15px 0 #62422e35;transform:rotate(4deg)}
+.hero-device img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.hero-device::after{content:"";position:absolute;top:3px;left:50%;width:36%;height:7px;border-radius:0 0 7px 7px;background:#4b3027;transform:translateX(-50%)}
+.hero-gifty-logo-fixed{position:absolute;left:6%;top:44%;width:37%;height:auto;z-index:1}
+.cover-proof{position:absolute;left:18px;bottom:18px;z-index:2;background:#f9f4e9;padding:7px 9px;color:#263229;font-size:10px;font-weight:900;letter-spacing:.03em}
+.case-hero-visual.visual-giftyview .cover-proof{display:none}
+
+/* Screens, figures and interaction panels within each project story. */
+.story-gallery{margin:24px 0 32px}.story-gallery-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px;font-size:11px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.story-gallery-head small{font-size:10px;font-weight:800;color:#647064;letter-spacing:.02em;text-transform:none}
+.screen-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}.screen-tabs button{border:1px solid #aab1a3;padding:10px 13px;background:#f5f1e7;font-size:11px;font-weight:900;cursor:pointer}.screen-tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:#fff}.screen-tabs button:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.gallery-stage{background:#ece4d3;border:1px solid #b8b9aa;padding:30px;min-height:380px;display:flex;justify-content:center;align-items:center;overflow:hidden}
+.gallery-phone{height:430px;aspect-ratio:370/712;border:9px solid #50382d;border-radius:28px;overflow:hidden;background:white;box-shadow:16px 18px 0 #50382d2a;position:relative}
+.gallery-phone img{width:100%;height:100%;object-fit:cover;display:block;object-position:top}.gallery-phone::after{content:"";position:absolute;top:3px;left:50%;width:36%;height:7px;border-radius:0 0 7px 7px;background:#50382d;transform:translateX(-50%)}
+.gallery-caption{font-size:12px;line-height:1.5;color:#5d665c;margin:13px 0 0}
+.artifact-figure{margin:26px 0 0;border:1px solid #c2c8ba;background:#f9f7f1;padding:12px}.artifact-figure img{display:block;width:100%;height:auto}.artifact-figure figcaption{font-size:12px;line-height:1.5;color:#4e5b50;padding:12px 2px 3px}
+.artifact-figure.narrow{max-width:370px;margin-left:auto;margin-right:auto}.artifact-figure.narrow img{max-height:620px;object-fit:contain}
+.artifact-figure.wide img{max-height:560px;object-fit:contain}
+.artifact-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start;margin-top:24px}
+.artifact-pair .artifact-figure{margin:0}.artifact-pair .artifact-figure img{height:280px;object-fit:contain}
+.concept-explainer{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:20px;align-items:center;margin:22px 0;padding:15px;border:1px solid #c4c9be;background:#f9f7f1}.concept-explainer img:first-child{width:100%;height:auto}.concept-explainer img:nth-child(2){width:100%;height:auto}.concept-explainer p{grid-column:1/-1;margin:0;font-size:12px;color:#5d675d}
+.case-content .demo-panel{transition:box-shadow .25s ease}.case-content .demo-panel:focus-within{box-shadow:7px 7px 0 #3155ff22}
+.case-chapters a{transition:background .2s ease,color .2s ease,border-color .2s ease}
+.next-case a strong{transition:transform .3s ease,color .3s ease}.next-case a:hover strong{transform:translateX(7px)}
+
+@media(max-width:1100px){.story-card{grid-column:span 3}.story-card-visual,.story-card-feature .story-card-visual{height:265px}.work-evidence-key>span:last-child{margin-left:0;width:100%}}
+@media(max-width:700px){.project-gallery{gap:15px}.story-card,.story-card-feature{grid-column:span 6}.story-card-visual,.story-card-feature .story-card-visual{height:285px}.story-card-info{min-height:0}.work-endcap{display:block}.work-endcap p{margin:9px 0}.work-endcap a{display:inline-block;margin-top:4px}.case-hero-visual.has-cover{min-height:280px}.hero-device{height:84%;right:12%;top:8%;border-width:7px}.hero-gifty-logo-fixed{width:36%;top:48%}.case-hero-visual.has-cover>span{font-size:9px}.artifact-pair{grid-template-columns:1fr}.artifact-pair .artifact-figure img{height:auto;max-height:360px}}
+@media(max-width:430px){.work-evidence-key{font-size:10px}.story-card-visual,.story-card-feature .story-card-visual{height:248px}.story-card-top{font-size:8px}.story-card-info h3{font-size:31px}.story-card-meta{font-size:9px}.story-card-info{padding:17px}.card-device{right:11%;height:78%}.case-hero-visual.has-cover{min-height:230px}.hero-device{height:82%;right:9%;border-width:6px;border-radius:17px}.cover-proof{font-size:8px}.gallery-stage{padding:18px;min-height:320px}.gallery-phone{height:340px}.concept-explainer{grid-template-columns:1fr}.concept-explainer img:nth-child(2){max-width:130px}}
+@media(prefers-reduced-motion:reduce){.read-progress{display:none}.motion-ready [data-reveal]{opacity:1;transform:none;transition:none}.hero-copy,.hero-art,.case-cover{animation:none}.card-cover,.card-device,.story-card,.story-card-arrow,.next-case a strong{transition:none!important}.story-card:hover .card-cover{transform:none}.story-card:hover .card-device{transform:rotate(3deg)}}
